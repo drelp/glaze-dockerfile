@@ -1,7 +1,7 @@
 # 依赖镜像名称和ID
 FROM centos:7
 # 指定镜像创建者信息
-MAINTAINER Peter
+LABEL maintainer="Peter Zhang <zhangchunsheng423@gmail.com>"
 # 切换工作目录
 WORKDIR /home/dev/jdk8
 # 在容器中创建目录
