@@ -28,6 +28,8 @@ yiluxiangbei/centos7-jdk8
 
 sudo docker exec -it jdk8 /bin/bash
 
+sudo docker push yiluxiangbei/centos7-jdk8:latest
+
 ```shell script
 sudo docker build --help
 [sudo] password for zhangchunsheng:
