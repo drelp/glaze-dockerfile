@@ -1,4 +1,3 @@
-sudo docker build -t='yiluxiangbei/centos7-openjdk8' .
 sudo docker build -t='yiluxiangbei/centos7-openjdk8' docker/centos/7/java/openjdk8
 
 sudo docker run -it \
