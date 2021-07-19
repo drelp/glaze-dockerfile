@@ -11,6 +11,8 @@ Configure a credential helper to remove this warning. See
 https://docs.docker.com/engine/reference/commandline/login/#credentials-store
 
 Login Succeeded
+
+sudo docker push yiluxiangbei/centos7-jdk8:latest
 ```
 
 ```
