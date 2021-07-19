@@ -3,7 +3,7 @@ FROM centos:7
 # 指定镜像创建者信息
 LABEL maintainer="Peter Zhang <zhangchunsheng423@gmail.com>"
 
-RUN yum install java-1.8.0-openjdk-devel
+RUN yum install java-1.8.0-openjdk-devel -y
 RUN ls /usr/lib/jvm
 
 # 配置java环境变量
