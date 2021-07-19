@@ -7,4 +7,7 @@ WORKDIR /home/bigdata/datax
 
 ADD datax.tar.gz /home/bigdata/
 
+COPY stream2stream.json /home/bigdata/datax/bin
+RUN cd /home/bigdata/datax/bin && python datax.py stream2stream.json
+
 ENV DATAX_HOME /home/bigdata/datax
