@@ -4,7 +4,6 @@ FROM centos:7
 LABEL maintainer="Peter Zhang <zhangchunsheng423@gmail.com>"
 
 RUN yum install java-1.8.0-openjdk-devel -y
-RUN ls /usr/lib/jvm
 
 # 配置java环境变量
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el7_9.x86_64
