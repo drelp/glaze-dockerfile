@@ -17,6 +17,7 @@ https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html
 mkdir -p /home/dev/jdk8
 
 sudo docker build -t='yiluxiangbei/centos7-jdk8' .
+mv jdk-8u291-linux-x64.tar.gz docker/centos/7/java/oracle-jdk8/
 sudo docker build -t='yiluxiangbei/centos7-jdk8' docker/centos/7/java/oracle-jdk8
 
 sudo docker run -it \
