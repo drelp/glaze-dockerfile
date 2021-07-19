@@ -1,7 +1,7 @@
 # glaze-dockerfile
 glaze-dockerfile
 
-```shell
+```shell script
 sudo docker login --username yiluxiangbei
 
 sudo docker login --username yiluxiangbei
