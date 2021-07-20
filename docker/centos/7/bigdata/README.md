@@ -24,4 +24,11 @@ yiluxiangbei/centos7-bigdata-datax
 sudo docker exec -it bigdata-datax /bin/bash
 
 sudo docker push yiluxiangbei/centos7-bigdata-datax:latest
+
+
+sudo docker tag docker_datax-web-admin:latest yiluxiangbei/centos7-bigdata-dataxweb-admin:latest
+sudo docker tag docker_datax-web-executor:latest yiluxiangbei/centos7-bigdata-dataxweb-executor:latest
+
+sudo docker push yiluxiangbei/centos7-bigdata-dataxweb-admin:latest
+sudo docker push yiluxiangbei/centos7-bigdata-dataxweb-executor:latest
 ```
