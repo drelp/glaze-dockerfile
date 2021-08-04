@@ -1,0 +1,56 @@
+version: '2.1'
+services:
+
+  doris-fe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: doris-fe
+    ports:
+      - 8030:8030
+      - 9010:9010
+      - 9020:9020
+      - 9030:9030
+    environment:
+      - DORIS_ROLE=fe-leader
+      # - DORIS_ROLE=fe-follower
+      # - DORIS_LEADER=172.19.0.198:9010
+      - FE_ROLE=fe-leader
+      # - FE_LEADER=172.19.0.198:9010
+    volumes:
+      - "./fe/log:/home/doris/fe/log"
+      - "./fe/doris-meta:/home/doris/fe/doris-meta"
+      - "./fe/conf:/home/doris/fe/conf"
+      - "/etc/localtime:/etc/localtime:ro"
+    networks:
+      - doris-network
+    security_opt:
+      - seccomp:unconfined
+    restart: always
+
+  doris-be:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: doris-be
+    ports:
+      - "8040:8040"
+      - "8060:8060"
+      - "9050:9050"
+      - "9060:9060"
+      - "9070:9070"
+    environment:
+      - DORIS_ROLE=be
+      - FE_ROLE=be
+    volumes:
+      - "./be/log:/home/doris/be/log"
+      - "./be/storage:/home/doris/be/storage"
+      - "./be/conf:/home/doris/be/conf/"
+      - "/etc/localtime:/etc/localtime:ro"
+    networks:
+      - doris-network
+    restart: always
+
+networks:
+  doris-network:
+    external: true
