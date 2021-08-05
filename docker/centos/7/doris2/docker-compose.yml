@@ -18,9 +18,9 @@ services:
       - FE_ROLE=fe-leader
       # - FE_LEADER=172.19.0.198:9010
     volumes:
-      - "./fe/log:/home/doris/fe/log"
-      - "./fe/doris-meta:/home/doris/fe/doris-meta"
-      - "./fe/conf:/home/doris/fe/conf"
+      - "./data/fe/log:/home/doris/fe/log"
+      - "./data/fe/doris-meta:/home/doris/fe/doris-meta"
+      - "./data/fe/conf:/home/doris/fe/conf"
       - "/etc/localtime:/etc/localtime:ro"
     networks:
       - doris-network
@@ -43,9 +43,9 @@ services:
       - DORIS_ROLE=be
       - FE_ROLE=be
     volumes:
-      - "./be/log:/home/doris/be/log"
-      - "./be/storage:/home/doris/be/storage"
-      - "./be/conf:/home/doris/be/conf/"
+      - "./data/be/log:/home/doris/be/log"
+      - "./data/be/storage:/home/doris/be/storage"
+      - "./data/be/conf:/home/doris/be/conf/"
       - "/etc/localtime:/etc/localtime:ro"
     networks:
       - doris-network
