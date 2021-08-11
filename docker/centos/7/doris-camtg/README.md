@@ -4,6 +4,9 @@ sudo docker-compose down
 sudo docker-compose up
 sudo docker-compose up -d
 
+sudo docker-compose up doris-fe
+sudo docker-compose up -d doris-fe
+
 sudo docker-compose up doris-be
 sudo docker-compose up -d doris-be
 
