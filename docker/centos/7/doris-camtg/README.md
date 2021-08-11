@@ -37,4 +37,7 @@ http://doris.incubator.apache.org/master/zh-CN/administrator-guide/operation/mon
 https://prometheus.io/download/
 https://grafana.com/grafana/download
 /etc/prometheus/prometheus.yml
+/etc/grafana/grafana.ini
+
+/usr/share/grafana
 ```
