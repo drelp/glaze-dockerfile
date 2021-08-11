@@ -22,7 +22,8 @@
 #####################################################################
 
 # the output dir of stderr and stdout
-LOG_DIR = ${DORIS_HOME}/log
+# LOG_DIR = ${DORIS_HOME}/log
+LOG_DIR = /home/doris/fe/log
 
 DATE = `date +%Y%m%d-%H%M%S`
 JAVA_OPTS="-Xmx4096m -XX:+UseMembar -XX:SurvivorRatio=8 -XX:MaxTenuringThreshold=7 -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+CMSClassUnloadingEnabled -XX:-CMSParallelRemarkEnabled -XX:CMSInitiatingOccupancyFraction=80 -XX:SoftRefLRUPolicyMSPerMB=0 -Xloggc:$DORIS_HOME/log/fe.gc.log.$DATE"
@@ -40,12 +41,14 @@ sys_log_level = INFO
 # store metadata, must be created before start FE.
 # Default value is ${DORIS_HOME}/doris-meta
 # meta_dir = ${DORIS_HOME}/doris-meta
+meta_dir = /home/doris/fe/doris-meta
 
 http_port = 8030
 rpc_port = 9020
 query_port = 9030
 edit_log_port = 9010
 mysql_service_nio_enabled = true
+
 
 enable_http_server_v2 = true
 
@@ -60,9 +63,11 @@ enable_http_server_v2 = true
 # Advanced configurations
 # log_roll_size_mb = 1024
 # sys_log_dir = ${DORIS_HOME}/log
+sys_log_dir = /home/doris/fe/log
   sys_log_roll_num = 10
 # sys_log_verbose_modules =
 # audit_log_dir = ${DORIS_HOME}/log
+audit_log_dir = /home/doris/fe/log
 # audit_log_modules = slow_query, query
   audit_log_roll_num = 90
 # meta_delay_toleration_second = 10
