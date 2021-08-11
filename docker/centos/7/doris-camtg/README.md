@@ -24,6 +24,8 @@ sudo docker-compose up -d grafana
 sudo docker-compose stop grafana
 sudo docker-compose rm grafana
 
+sudo docker-compose logs grafana
+
 mysql -h127.0.0.1 -uroot -p
 
 mysql -h127.0.0.1 -uroot -p -P9030
