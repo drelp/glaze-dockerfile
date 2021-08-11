@@ -6,9 +6,13 @@ sudo docker-compose up -d
 
 sudo docker-compose up doris-fe
 sudo docker-compose up -d doris-fe
+sudo docker-compose stop doris-fe
+sudo docker-compose rm doris-fe
 
 sudo docker-compose up doris-be
 sudo docker-compose up -d doris-be
+sudo docker-compose stop doris-be
+sudo docker-compose rm doris-be
 
 cd /home/doris/git/glaze-dockerfile/docker/centos/7/doris-camtg
 
