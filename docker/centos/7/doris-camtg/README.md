@@ -49,4 +49,14 @@ https://grafana.com/grafana/download
 /etc/grafana/grafana.ini
 
 /usr/share/grafana
+
+create database grafana DEFAULT CHARACTER SET utf8mb4 ;
+GRANT ALL ON grafana.* TO grafana@'%' IDENTIFIED BY 'grafanap' WITH GRANT OPTION;
+
+CREATE TABLE `session` (
+    `key`       CHAR(16) NOT NULL,
+    `data`      BLOB,
+    `expiry`    INT(11) UNSIGNED NOT NULL,
+    PRIMARY KEY (`key`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 ```
