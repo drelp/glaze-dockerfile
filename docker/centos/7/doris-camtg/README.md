@@ -20,6 +20,7 @@ sudo docker-compose up -d grafana-mysql80
 sudo docker-compose stop grafana-mysql80
 sudo docker-compose rm grafana-mysql80
 
+sudo docker-compose up grafana
 sudo docker-compose up -d grafana
 sudo docker-compose stop grafana
 sudo docker-compose rm grafana
