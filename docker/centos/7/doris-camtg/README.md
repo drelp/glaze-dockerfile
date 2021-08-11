@@ -29,6 +29,7 @@ sudo docker-compose logs -f grafana
 
 docker exec -it 1055d4412078 bash
 mysql -h127.0.0.1 -uroot -p
+mysql -h192.168.0.186 -ugrafana -p
 
 mysql -h127.0.0.1 -uroot -p -P9030
 mysql -h192.168.0.186 -uroot -p -P9030
