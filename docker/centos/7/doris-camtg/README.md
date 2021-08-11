@@ -42,6 +42,8 @@ CREATE DATABASE example_db;
 CREATE USER 'test' IDENTIFIED BY 'test';
 SHOW DATABASES;
 GRANT ALL ON example_db TO test;
+HELP CREATE TABLE;
+USE example_db;
 ```
 
 ```shell script
