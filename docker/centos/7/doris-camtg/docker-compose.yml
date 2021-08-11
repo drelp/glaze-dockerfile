@@ -37,3 +37,16 @@ services:
       - "/etc/localtime:/etc/localtime:ro"
     network_mode: "host"
     restart: always
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - doris-network
+    restart: always
+
+networks:
+  doris-network:
+    external: true
