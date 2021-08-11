@@ -6,11 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: doris-fe
-    ports:
-      - 8030:8030
-      - 9010:9010
-      - 9020:9020
-      - 9030:9030
     environment:
       - DORIS_ROLE=fe-leader
       # - DORIS_ROLE=fe-follower
@@ -22,8 +17,7 @@ services:
       - "./data/fe/doris-meta:/home/doris/fe/doris-meta"
       - "./data/fe/conf:/home/doris/fe/conf"
       - "/etc/localtime:/etc/localtime:ro"
-    networks:
-      - doris-network
+    network_mode: "host"
     security_opt:
       - seccomp:unconfined
     restart: always
@@ -43,7 +37,3 @@ services:
       - "/etc/localtime:/etc/localtime:ro"
     network_mode: "host"
     restart: always
-
-networks:
-  doris-network:
-    external: true
