@@ -27,6 +27,7 @@ sudo docker-compose rm grafana
 
 sudo docker-compose logs -f grafana
 
+docker exec -it 1055d4412078 bash
 mysql -h127.0.0.1 -uroot -p
 
 mysql -h127.0.0.1 -uroot -p -P9030
@@ -50,8 +51,9 @@ https://grafana.com/grafana/download
 
 /usr/share/grafana
 
-create database grafana DEFAULT CHARACTER SET utf8mb4 ;
-GRANT ALL ON grafana.* TO grafana@'%' IDENTIFIED BY 'grafanap' WITH GRANT OPTION;
+create database grafana DEFAULT CHARACTER SET utf8mb4;
+create user 'grafana'@'127.0.0.1' identified by 'grafana';
+grant all privileges on grafana.* to 'grafana'@'127.0.0.1';
 
 CREATE TABLE `session` (
     `key`       CHAR(16) NOT NULL,
