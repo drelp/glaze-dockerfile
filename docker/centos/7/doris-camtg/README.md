@@ -30,5 +30,7 @@ sudo docker network create --subnet=172.19.0.0/16 doris-network
 
 ```shell script
 http://doris.incubator.apache.org/master/zh-CN/administrator-guide/operation/monitor-alert.html
+https://prometheus.io/download/
+https://grafana.com/grafana/download
 /etc/prometheus/prometheus.yml
 ```
