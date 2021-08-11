@@ -33,12 +33,6 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: doris-be
-    ports:
-      - "8040:8040"
-      - "8060:8060"
-      - "9050:9050"
-      - "9060:9060"
-      - "9070:9070"
     environment:
       - DORIS_ROLE=be
       - FE_ROLE=be
