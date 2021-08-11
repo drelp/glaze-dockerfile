@@ -47,8 +47,7 @@ services:
       - "./data/be/storage:/home/doris/be/storage"
       - "./data/be/conf:/home/doris/be/conf/"
       - "/etc/localtime:/etc/localtime:ro"
-    networks:
-      - doris-network
+    network_mode: "host"
     restart: always
 
 networks:
