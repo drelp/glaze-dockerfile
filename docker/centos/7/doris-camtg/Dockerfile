@@ -1,8 +1,9 @@
-FROM openjdk:8-jre
+FROM apachedoris/doris-dev:build-env-1.2
 
 RUN mkdir -p /home/doris
 
-ENV JAVA_HOME /usr/local/openjdk-8
+# ENV JAVA_HOME /usr/lib/jvm/java
+# /usr/java/jdk
 
 # 0.12.21
 COPY ./fe/ /home/doris/fe
