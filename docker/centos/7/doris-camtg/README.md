@@ -27,6 +27,9 @@ sudo docker-compose rm grafana
 
 sudo docker-compose logs -f grafana
 
+tail -f data/fe/log/fe.*
+tail -f data/be/log/be.*
+
 docker exec -it 1055d4412078 bash
 mysql -h127.0.0.1 -uroot -p
 mysql -h192.168.0.186 -ugrafana -p
@@ -44,6 +47,16 @@ SHOW DATABASES;
 GRANT ALL ON example_db TO test;
 HELP CREATE TABLE;
 USE example_db;
+CREATE TABLE table1
+(
+    siteid INT DEFAULT '10',
+    citycode SMALLINT,
+    username VARCHAR(32) DEFAULT '',
+    pv BIGINT SUM DEFAULT '0'
+)
+AGGREGATE KEY(siteid, citycode, username)
+DISTRIBUTED BY HASH(siteid) BUCKETS 10
+PROPERTIES("replication_num" = "1");
 ```
 
 ```shell script
