@@ -50,6 +50,17 @@ services:
       - doris-network
     restart: always
 
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
+    networks:
+      - doris-network
+    restart: always
+
 networks:
   doris-network:
     external: true
