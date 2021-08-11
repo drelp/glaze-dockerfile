@@ -43,6 +43,9 @@ services:
     container_name: prometheus
     ports:
       - "9090:9090"
+    volumes:
+      - "./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"
+      - "/etc/localtime:/etc/localtime:ro"
     networks:
       - doris-network
     restart: always
