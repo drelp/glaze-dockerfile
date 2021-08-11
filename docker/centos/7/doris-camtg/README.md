@@ -10,7 +10,11 @@ sudo docker-compose up -d doris-fe
 sudo docker-compose up doris-be
 sudo docker-compose up -d doris-be
 
+cd /home/doris/git/glaze-dockerfile/docker/centos/7/doris-camtg
+
 sudo docker-compose up -d prometheus
+sudo docker-compose stop prometheus
+sudo docker-compose rm prometheus
 
 mysql -h127.0.0.1 -uroot -p -P9030
 mysql -h192.168.0.186 -uroot -p -P9030
