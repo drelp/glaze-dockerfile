@@ -56,6 +56,7 @@ create user 'grafana'@'127.0.0.1' identified by 'grafana';
 grant all privileges on grafana.* to 'grafana'@'127.0.0.1';
 create user 'grafana'@'%' identified by 'grafana';
 grant all privileges on grafana.* to 'grafana'@'%';
+flush privileges;
 
 CREATE TABLE `session` (
     `key`       CHAR(16) NOT NULL,
