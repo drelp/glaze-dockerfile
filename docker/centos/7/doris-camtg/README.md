@@ -5,7 +5,7 @@ sudo docker-compose up
 sudo docker-compose up -d
 
 sudo docker-compose up doris-be
-sudo docker-compose up doris-be -d
+sudo docker-compose up -d doris-be
 
 mysql -h127.0.0.1 -uroot -p -P9030
 ALTER SYSTEM ADD BACKEND "doris-be:9050";
