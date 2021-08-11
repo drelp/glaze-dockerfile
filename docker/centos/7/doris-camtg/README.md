@@ -10,6 +10,8 @@ sudo docker-compose up -d doris-fe
 sudo docker-compose up doris-be
 sudo docker-compose up -d doris-be
 
+sudo docker-compose up -d prometheus
+
 mysql -h127.0.0.1 -uroot -p -P9030
 mysql -h192.168.0.186 -uroot -p -P9030
 ALTER SYSTEM ADD BACKEND "192.168.0.152:9050";
