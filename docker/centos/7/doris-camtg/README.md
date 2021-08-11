@@ -16,6 +16,10 @@ sudo docker-compose up -d prometheus
 sudo docker-compose stop prometheus
 sudo docker-compose rm prometheus
 
+sudo docker-compose up -d grafana
+sudo docker-compose stop grafana
+sudo docker-compose rm grafana
+
 mysql -h127.0.0.1 -uroot -p -P9030
 mysql -h192.168.0.186 -uroot -p -P9030
 ALTER SYSTEM ADD BACKEND "192.168.0.152:9050";
