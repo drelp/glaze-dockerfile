@@ -9,6 +9,11 @@ sudo docker-compose up -d doris-fe
 sudo docker-compose stop doris-fe
 sudo docker-compose rm doris-fe
 
+sudo docker-compose up doris-fe-follower
+sudo docker-compose up -d doris-fe-follower
+sudo docker-compose stop doris-fe-follower
+sudo docker-compose rm doris-fe-follower
+
 sudo docker-compose up doris-be
 sudo docker-compose up -d doris-be
 sudo docker-compose stop doris-be
