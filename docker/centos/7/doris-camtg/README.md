@@ -72,6 +72,7 @@ sudo docker network create --subnet=172.19.0.0/16 doris-network
 http://doris.incubator.apache.org/master/zh-CN/administrator-guide/operation/monitor-alert.html
 https://prometheus.io/download/
 https://grafana.com/grafana/download
+http://doris.incubator.apache.org/master/zh-CN/installing/install-deploy.html#%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2
 /etc/prometheus/prometheus.yml
 /etc/grafana/grafana.ini
 
