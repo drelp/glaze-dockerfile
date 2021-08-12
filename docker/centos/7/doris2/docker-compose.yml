@@ -13,17 +13,42 @@ services:
       - 9030:9030
     environment:
       - DORIS_ROLE=fe-leader
-      # - DORIS_ROLE=fe-follower
-      # - DORIS_LEADER=172.19.0.198:9010
       - FE_ROLE=fe-leader
-      # - FE_LEADER=172.19.0.198:9010
     volumes:
       - "./data/fe/log:/home/doris/fe/log"
       - "./data/fe/doris-meta:/home/doris/fe/doris-meta"
       - "./data/fe/conf:/home/doris/fe/conf"
       - "/etc/localtime:/etc/localtime:ro"
     networks:
-      - doris-network
+      doris-network:
+        ipv4_address: 172.19.0.198
+    security_opt:
+      - seccomp:unconfined
+    restart: always
+
+  doris-fe-follower:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: doris-fe-follower
+    ports:
+      - 8030:8030
+      - 9010:9010
+      - 9020:9020
+      - 9030:9030
+    environment:
+      - DORIS_ROLE=fe-follower
+      - DORIS_LEADER=172.19.0.198:9010
+      - FE_ROLE=fe-follower
+      - FE_LEADER=172.19.0.198:9010
+    volumes:
+      - "./data/fe/log:/home/doris/fe/log"
+      - "./data/fe/doris-meta:/home/doris/fe/doris-meta"
+      - "./data/fe/conf:/home/doris/fe/conf"
+      - "/etc/localtime:/etc/localtime:ro"
+    networks:
+      doris-network:
+        ipv4_address: 172.19.0.197
     security_opt:
       - seccomp:unconfined
     restart: always
@@ -48,7 +73,8 @@ services:
       - "./data/be/conf:/home/doris/be/conf/"
       - "/etc/localtime:/etc/localtime:ro"
     networks:
-      - doris-network
+      doris-network:
+        ipv4_address: 172.19.0.199
     restart: always
 
 networks:
