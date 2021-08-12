@@ -8,10 +8,27 @@ services:
     container_name: doris-fe
     environment:
       - DORIS_ROLE=fe-leader
-      # - DORIS_ROLE=fe-follower
-      # - DORIS_LEADER=192.168.0.186:9010
       - FE_ROLE=fe-leader
-      # - FE_LEADER=192.168.0.186:9010
+    volumes:
+      - "./data/fe/log:/home/doris/fe/log"
+      - "./data/fe/doris-meta:/home/doris/fe/doris-meta"
+      - "./data/fe/conf:/home/doris/fe/conf"
+      - "/etc/localtime:/etc/localtime:ro"
+    network_mode: "host"
+    security_opt:
+      - seccomp:unconfined
+    restart: always
+
+  doris-fe-follower:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: doris-fe-follower
+    environment:
+      - DORIS_ROLE=fe-follower
+      - DORIS_LEADER=192.168.0.186:9010
+      - FE_ROLE=fe-follower
+      - FE_LEADER=192.168.0.186:9010
     volumes:
       - "./data/fe/log:/home/doris/fe/log"
       - "./data/fe/doris-meta:/home/doris/fe/doris-meta"
