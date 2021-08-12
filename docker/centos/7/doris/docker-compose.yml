@@ -1,69 +1,73 @@
 version: '3.7'
 services:
-    doris-fe-leader:
-        image: doris:0.14.0
-        ports:
-            - "8061:8030"
-            - "9061:9030"
-        container_name: "doris-fe-leader"
-        volumes:
-            - "./data/fe-leader/log:/home/doris/fe/log"
-            - "./data/fe-leader/doris-meta:/home/doris/fe/doris-meta"
-            - "./fe/conf:/home/doris/fe/conf"
-            - "/etc/localtime:/etc/localtime:ro"
-        environment:
-            - FE_ROLE=fe-leader
-        security_opt:
-            - seccomp:unconfined
-    doris-fe-follower:
-        image: doris:0.14.0
-        ports:
-            - "8062:8030"
-            - "9062:9030"
-        container_name: "doris-fe-follower"
-        volumes:
-            - "./data/fe-follower/log:/home/doris/fe/log"
-            - "./data/fe-follower/doris-meta:/home/doris/fe/doris-meta"
-            - "./fe/conf:/home/doris/fe/conf"
-            - "/etc/localtime:/etc/localtime:ro"
-        environment:
-            - FE_ROLE=fe-follower
-            - FE_LEADER=fe-leader:9010
-        security_opt:
-            - seccomp:unconfined
-    doris-be-1:
-        image: doris:0.14.0
-        container_name: "doris-be-1"
-        ports:
-            - "8041:8040"
-        volumes:
-            - "./data/be-1/log:/home/doris/be/log"
-            - "./data/be-1/storage:/home/doris/be/storage"
-            - "./be/conf:/home/doris/be/conf/"
-            - "/etc/localtime:/etc/localtime:ro"
-        environment:
+  doris-fe-leader:
+    image: doris:0.14.0
+    ports:
+      - "8061:8030"
+      - "9061:9030"
+    container_name: "doris-fe-leader"
+    volumes:
+      - "./data/fe-leader/log:/home/doris/fe/log"
+      - "./data/fe-leader/doris-meta:/home/doris/fe/doris-meta"
+      - "./fe/conf:/home/doris/fe/conf"
+      - "/etc/localtime:/etc/localtime:ro"
+    environment:
+      - FE_ROLE=fe-leader
+    security_opt:
+      - seccomp:unconfined
+
+  doris-fe-follower:
+    image: doris:0.14.0
+    ports:
+      - "8062:8030"
+      - "9062:9030"
+    container_name: "doris-fe-follower"
+    volumes:
+      - "./data/fe-follower/log:/home/doris/fe/log"
+      - "./data/fe-follower/doris-meta:/home/doris/fe/doris-meta"
+      - "./fe/conf:/home/doris/fe/conf"
+      - "/etc/localtime:/etc/localtime:ro"
+    environment:
+      - FE_ROLE=fe-follower
+      - FE_LEADER=fe-leader:9010
+    security_opt:
+      - seccomp:unconfined
+
+  doris-be-1:
+    image: doris:0.14.0
+    container_name: "doris-be-1"
+    ports:
+      - "8041:8040"
+    volumes:
+      - "./data/be-1/log:/home/doris/be/log"
+      - "./data/be-1/storage:/home/doris/be/storage"
+      - "./be/conf:/home/doris/be/conf/"
+      - "/etc/localtime:/etc/localtime:ro"
+    environment:
+      - FE_ROLE=be
+
+  doris-be-2:
+    image: doris:0.14.0
+    container_name: "doris-be-2"
+    volumes:
+      - "./data/be-2/log:/home/doris/be/log"
+      - "./data/be-2/storage:/home/doris/be/storage"
+      - "./be/conf:/home/doris/be/conf/"
+      - "/etc/localtime:/etc/localtime:ro"
+    environment:
             - FE_ROLE=be
-    doris-be-2:
-        image: doris:0.14.0
-        container_name: "doris-be-2"
-        volumes:
-            - "./data/be-2/log:/home/doris/be/log"
-            - "./data/be-2/storage:/home/doris/be/storage"
-            - "./be/conf:/home/doris/be/conf/"
-            - "/etc/localtime:/etc/localtime:ro"
-        environment:
-            - FE_ROLE=be
-    cluster:
-        image: mysql:5.7
-        container_name: "doris-cluster-op"
-        depends_on:
-          - fe-leader
-          - fe-follower
-          - be-1
-          - be-2
-        command:
-          - sh
-          - -c 
-          - |
-            sleep 20
-            mysql -uroot -h fe-leader -P 9030 -e 'ALTER SYSTEM ADD OBSERVER "fe-follower:9010"; ALTER SYSTEM ADD BACKEND "be-1:9050";ALTER SYSTEM ADD BACKEND "be-2:9050"'
+
+  cluster:
+    image: mysql:5.7
+    container_name: "doris-cluster-op"
+    depends_on:
+      - fe-leader
+      - fe-follower
+      - be-1
+      - be-2
+    command:
+      - sh
+      - -c
+      - |
+        sleep 20
+        mysql -uroot -h fe-leader -P 9030 -e 'ALTER SYSTEM ADD OBSERVER "fe-follower:9010"; ALTER SYSTEM ADD BACKEND "be-1:9050";ALTER SYSTEM ADD BACKEND "be-2:9050"'
