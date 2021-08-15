@@ -103,6 +103,9 @@ CREATE TABLE `session` (
     PRIMARY KEY (`key`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+insert into table1(siteid,citycode,username,pv) values (1,'1','1',1);
+select * from table1;
+
 chown -R root:root /etc/grafana && \
 chmod -R a+r /etc/grafana && \
 chown -R grafana:grafana /var/lib/grafana && \
