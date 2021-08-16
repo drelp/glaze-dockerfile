@@ -13,7 +13,7 @@ services:
       - "./data/fe/log:/home/doris/fe/log"
       - "./data/fe/doris-meta:/home/doris/fe/doris-meta"
       - "./data/fe/conf:/home/doris/fe/conf"
-      - "/etc/localtime:/etc/localtime:ro"
+      - /etc/localtime:/etc/localtime
     network_mode: "host"
     security_opt:
       - seccomp:unconfined
@@ -33,7 +33,7 @@ services:
       - "./data/fe/log:/home/doris/fe/log"
       - "./data/fe/doris-meta:/home/doris/fe/doris-meta"
       - "./data/fe/conf:/home/doris/fe/conf"
-      - "/etc/localtime:/etc/localtime:ro"
+      - /etc/localtime:/etc/localtime
     network_mode: "host"
     security_opt:
       - seccomp:unconfined
@@ -51,7 +51,7 @@ services:
       - "./data/be/log:/home/doris/be/log"
       - "./data/be/storage:/home/doris/be/storage"
       - "./data/be/conf:/home/doris/be/conf/"
-      - "/etc/localtime:/etc/localtime:ro"
+      - /etc/localtime:/etc/localtime
     network_mode: "host"
     restart: always
 
@@ -62,7 +62,7 @@ services:
       - "9090:9090"
     volumes:
       - "./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"
-      - "/etc/localtime:/etc/localtime:ro"
+      - /etc/localtime:/etc/localtime
     networks:
       - doris-network
     restart: always
@@ -80,6 +80,7 @@ services:
       - ./db/conf.d:/etc/mysql/conf.d
       - ./db/data:/var/lib/mysql
       - ./db/init-sql:/docker-entrypoint-initdb.d
+      - /etc/localtime:/etc/localtime
     networks:
       - doris-network
     environment:
@@ -94,7 +95,7 @@ services:
     volumes:
       - "./grafana/grafana.ini:/etc/grafana/grafana.ini"
       # - "./grafana/data:/var/lib/grafana"
-      - "/etc/localtime:/etc/localtime:ro"
+      - /etc/localtime:/etc/localtime
     depends_on:
       - grafana-mysql80
     networks:
