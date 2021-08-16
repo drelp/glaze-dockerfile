@@ -119,4 +119,8 @@ chown -R grafana:grafana /usr/share/grafana
 
 rm -rf data/
 git reset --hard
+
+https://cloud.baidu.com/doc/DORIS/s/pkmealpi3
+
+{"receivedBytes":0,"errorRows":0,"committedTaskNum":0,"loadedRows":0,"loadRowsRate":0,"abortedTaskNum":138,"totalRows":0,"unselectedRows":0,"receivedBytesRate":0,"taskExecuteTimeMs":1}
 ```
