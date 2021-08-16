@@ -6,6 +6,7 @@ RUN mkdir -p /home/doris
 # /usr/java/jdk
 
 ENV TZ Asia/Shanghai
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 # 0.12.21
 COPY ./fe/ /home/doris/fe
