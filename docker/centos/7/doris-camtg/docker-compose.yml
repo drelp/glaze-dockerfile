@@ -3,7 +3,7 @@ services:
 
   doris-fe:
     build:
-      context: .
+      context: docker-build
       dockerfile: Dockerfile
     container_name: doris-fe
     environment:
@@ -21,7 +21,7 @@ services:
 
   doris-fe-follower:
     build:
-      context: .
+      context: docker-build
       dockerfile: Dockerfile
     container_name: doris-fe-follower
     environment:
@@ -41,7 +41,7 @@ services:
 
   doris-be:
     build:
-      context: .
+      context: docker-build
       dockerfile: Dockerfile
     container_name: doris-be
     environment:
