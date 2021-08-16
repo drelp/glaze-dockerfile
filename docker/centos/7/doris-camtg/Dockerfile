@@ -5,6 +5,8 @@ RUN mkdir -p /home/doris
 # ENV JAVA_HOME /usr/lib/jvm/java
 # /usr/java/jdk
 
+ENV TZ Asia/Shanghai
+
 # 0.12.21
 COPY ./fe/ /home/doris/fe
 
