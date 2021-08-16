@@ -73,6 +73,8 @@ CREATE TABLE table1
 AGGREGATE KEY(siteid, citycode, username)
 DISTRIBUTED BY HASH(siteid) BUCKETS 10
 PROPERTIES("replication_num" = "1");
+SHOW TABLES;
+DESC table1;
 ```
 
 ```shell script
