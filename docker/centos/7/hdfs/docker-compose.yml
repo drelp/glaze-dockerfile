@@ -22,3 +22,4 @@ services:
     command: start-hadoop datanode 192.168.0.97
     environment:
       HDFS_USER: hdfsuser
+    network_mode: "host"
