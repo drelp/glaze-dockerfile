@@ -9,6 +9,7 @@ sudo docker-compose up
 sudo docker-compose up -d
 
 sudo docker-compose up -d namenode
+sudo docker-compose up -d datanode
 ```
 
 https://github.com/SingularitiesCR/hadoop-docker
