@@ -23,6 +23,11 @@ sudo docker-compose up -d doris-be
 sudo docker-compose stop doris-be
 sudo docker-compose rm doris-be
 
+sudo docker-compose up doris-broker
+sudo docker-compose up -d doris-broker
+sudo docker-compose stop doris-broker
+sudo docker-compose rm doris-broker
+
 cd /home/doris/git/glaze-dockerfile/docker/centos/7/doris-camtg
 
 sudo docker-compose up -d prometheus
