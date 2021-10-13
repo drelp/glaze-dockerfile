@@ -7,6 +7,7 @@ sudo docker-compose up -d
 sudo docker-compose build doris-fe
 sudo docker-compose build doris-fe-follower
 sudo docker-compose build doris-be
+sudo docker-compose build doris-broker
 
 sudo docker-compose up doris-fe
 sudo docker-compose up -d doris-fe
