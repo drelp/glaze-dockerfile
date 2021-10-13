@@ -59,7 +59,7 @@ services:
     build:
       context: docker-build
       dockerfile: Dockerfile
-    container_name: doris-be
+    container_name: doris-broker
     environment:
       - DORIS_ROLE=broker
       - FE_ROLE=broker
