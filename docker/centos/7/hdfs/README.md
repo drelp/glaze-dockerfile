@@ -7,6 +7,8 @@ sudo docker-compose build
 sudo docker-compose down
 sudo docker-compose up
 sudo docker-compose up -d
+
+sudo docker-compose up -d namenode
 ```
 
 https://github.com/SingularitiesCR/hadoop-docker
