@@ -6,6 +6,8 @@ services:
     command: start-hadoop namenode
     environment:
       HDFS_USER: hdfsuser
+    volumes:
+      - "./data/hdfs:/opt/hdfs"
     network_mode: "host"
 
   datanode:
@@ -13,4 +15,6 @@ services:
     command: start-hadoop datanode 192.168.0.97
     environment:
       HDFS_USER: hdfsuser
+    volumes:
+      - "./data/hdfs:/opt/hdfs"
     network_mode: "host"
