@@ -10,5 +10,5 @@ elif [[ $DORIS_ROLE = 'be' ]]; then
 elif [[ $DORIS_ROLE = 'fe-follower' ]]; then
     /home/doris/fe/bin/start_fe.sh --helper $DORIS_LEADER
 else
-    /home/doris/fs_broker/bin/start_broker.sh
+    /home/doris/apache_hdfs_broker/bin/start_broker.sh
 fi

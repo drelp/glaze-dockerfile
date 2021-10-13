@@ -55,6 +55,22 @@ services:
     network_mode: "host"
     restart: always
 
+  doris-broker:
+    build:
+      context: docker-build
+      dockerfile: Dockerfile
+    container_name: doris-be
+    environment:
+      - DORIS_ROLE=broker
+      - FE_ROLE=broker
+    volumes:
+      - "./data/be/log:/home/doris/be/log"
+      - "./data/be/storage:/home/doris/be/storage"
+      - "./data/be/conf:/home/doris/be/conf/"
+      - /etc/localtime:/etc/localtime
+    network_mode: "host"
+    restart: always
+
   prometheus:
     image: prom/prometheus
     container_name: prometheus
