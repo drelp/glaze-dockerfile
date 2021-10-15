@@ -62,6 +62,10 @@ ALTER SYSTEM ADD BACKEND "192.168.0.196:9050";
 ALTER SYSTEM ADD BACKEND "192.168.0.198:9050";
 ALTER SYSTEM ADD BACKEND "192.168.0.185:9050";
 
+ALTER SYSTEM DROPP BACKEND "192.168.0.198:9050";
+ERROR 1064 (HY000): errCode = 2, detailMessage = It is highly NOT RECOMMENDED to use DROP BACKEND stmt.It is not safe to directly drop a backend. All data
+on this backend will be discarded permanently. If you insist, use DROPP BACKEND stmt (double P).
+
 ALTER SYSTEM ADD BACKEND "192.168.0.97:9050";
 
 ALTER SYSTEM ADD BROKER hdfs_broker "192.168.0.196:8000";
