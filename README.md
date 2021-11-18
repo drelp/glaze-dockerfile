@@ -16,7 +16,7 @@ sudo docker push yiluxiangbei/centos7-jdk8:latest
 ```
 
 ```
-grafana + prometheus
+grafana + promethieus
 ```
 
 ```
