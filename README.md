@@ -16,5 +16,9 @@ sudo docker push yiluxiangbei/centos7-jdk8:latest
 ```
 
 ```
+grafana + prometheus
+```
+
+```
 https://docs.docker.com/engine/reference/builder/
 ```
