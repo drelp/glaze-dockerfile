@@ -37,6 +37,7 @@ docker run -d \
 
 ```
 https://github.com/prometheus/node_exporter
+https://github.com/prometheus-community/windows_exporter
 ```
 
 ```
