@@ -29,6 +29,15 @@ sudo docker-compose rm node_exporter
 sudo docker-compose logs -f grafana
 
 sudo docker network create --subnet=172.19.0.0/16 grafana-network
+
+mysql -h127.0.0.1 -uroot -p
+root
+create database grafana DEFAULT CHARACTER SET utf8mb4;
+create user 'grafana'@'127.0.0.1' identified by 'grafana';
+grant all privileges on grafana.* to 'grafana'@'127.0.0.1';
+create user 'grafana'@'%' identified by 'grafana';
+grant all privileges on grafana.* to 'grafana'@'%';
+flush privileges;
 ```
 
 ```shell script
