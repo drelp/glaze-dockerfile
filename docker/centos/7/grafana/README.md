@@ -21,6 +21,11 @@ sudo docker-compose up -d grafana
 sudo docker-compose stop grafana
 sudo docker-compose rm grafana
 
+sudo docker-compose up node_exporter
+sudo docker-compose up -d node_exporter
+sudo docker-compose stop node_exporter
+sudo docker-compose rm node_exporter
+
 sudo docker-compose logs -f grafana
 
 sudo docker network create --subnet=172.19.0.0/16 grafana-network
@@ -40,6 +45,8 @@ docker run -d \
 ```
 https://github.com/prometheus/node_exporter
 https://github.com/prometheus-community/windows_exporter
+
+https://www.cnblogs.com/zongwei/p/13937017.html
 ```
 
 ```
