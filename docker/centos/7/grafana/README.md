@@ -60,7 +60,17 @@ https://www.cnblogs.com/zongwei/p/13937017.html
 https://blog.csdn.net/u011943534/article/details/102906030
 
 https://grafana.com/grafana/dashboards/162/revisions
+k8s grafana
 https:///dashboards/315
+
+grafana dashboard import
+
+https://grafana.com/grafana/dashboards/
+
+https://grafana.com/grafana/dashboards/13978?pg=dashboards&plcmt=featured-dashboard-2
+
+https://www.cnblogs.com/xuliuzai/p/11134714.html
+13978
 ```
 
 ```
