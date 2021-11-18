@@ -50,4 +50,5 @@ services:
 
 networks:
   grafana-network:
+    # driver: bridge
     external: true
