@@ -1,0 +1,8 @@
+docker ps
+CONTAINER ID   IMAGE                                                           COMMAND                  CREATED         STATUS                 PORTS
+                                                                         NAMES
+95e8cc18a551   grafana/grafana                                                 "/run.sh"                8 minutes ago   Up 45 seconds          0.0.0.0:3000->3000/tcp, :::3000->3000/tcp                                              grafana
+aa8ec4aa776f   quay.io/prometheus/node-exporter:latest                         "/bin/node_exporter …"   8 minutes ago   Up 8 minutes
+                                                                         node_exporter
+0db4934c2562   prom/prometheus                                                 "/bin/prometheus --c…"   8 minutes ago   Up 4 minutes           0.0.0.0:9090->9090/tcp, :::9090->9090/tcp                                              prometheus
+c664d34977c7   mysql:8.0                                                       "docker-entrypoint.s…"   8 minutes ago   Up 8 minutes           0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp                                   grafana-mysql
