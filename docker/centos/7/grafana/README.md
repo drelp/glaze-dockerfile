@@ -26,6 +26,15 @@ sudo docker-compose logs -f grafana
 sudo docker network create --subnet=172.19.0.0/16 grafana-network
 ```
 
+```shell script
+docker run -d \
+  --net="host" \
+  --pid="host" \
+  -v "/:/host:ro,rslave" \
+  quay.io/prometheus/node-exporter:latest \
+  --path.rootfs=/host
+```
+
 ```
 https://github.com/prometheus/node_exporter
 ```
