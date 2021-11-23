@@ -15,6 +15,8 @@ ln -s /usr/bin/php74 /usr/bin/php
 
 docker commit -a "Peter Zhang" -m "centos php 7" bb412f93c31e centos-php:php74
 
+sudo docker build -t centos-php:php74 -f ./Dockerfile .
+
 sudo docker tag centos-php:php74 yiluxiangbei/centos-php:php74
 sudo docker push yiluxiangbei/centos-php:php74
 
