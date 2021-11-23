@@ -5,10 +5,10 @@ yum install epel-release
 yum -y install https://mirrors.aliyun.com/remi/enterprise/remi-release-7.rpm
 yum -y install yum-utils
 yum install php74
-yum install php74-pecl-grpc
-yum install php74-pecl-protobuf
-yum install php74-pecl-yac
-yum install php74-xml
+yum install php74-pecl-grpc -y
+yum install php74-pecl-protobuf -y
+yum install php74-pecl-yac -y
+yum install php74-xml -y
 ```
 
 ```shell script
