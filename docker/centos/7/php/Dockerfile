@@ -13,6 +13,7 @@ RUN yum install php74-php-xml -y
 RUN yum install php74-php -y
 RUN yum install -y unzip
 RUN yum install -y figlet
+RUN yum install -y sudo
 RUN ln -s /usr/bin/php74 /usr/bin/php
 
 RUN mkdir /home/php
