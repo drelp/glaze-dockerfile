@@ -5,10 +5,13 @@ yum install epel-release
 yum -y install https://mirrors.aliyun.com/remi/enterprise/remi-release-7.rpm
 yum -y install yum-utils
 yum install php74
-yum install php74-pecl-grpc -y
-yum install php74-pecl-protobuf -y
-yum install php74-pecl-yac -y
-yum install php74-xml -y
+yum-config-manager --enable remi-php74
+yum install php74-php-pecl-grpc -y
+yum install php74-php-pecl-protobuf -y
+yum install php74-php-pecl-yac -y
+yum install php74-php-xml -y
+yum install php74-php -y
+ln -s /usr/bin/php74 /usr/bin/php
 ```
 
 ```shell script
@@ -24,4 +27,19 @@ php74-php-xml-7.4.24-1.el7.remi.x86_64
 php74-runtime-1.0-3.el7.remi.x86_64
 php74-1.0-3.el7.remi.x86_64
 php74-php-pecl-igbinary-3.2.6-1.el7.remi.x86_64
+```
+
+```
+rpm -qa|grep php
+php74-runtime-1.0-3.el7.remi.x86_64
+php74-php-common-7.4.26-1.el7.remi.x86_64
+php74-1.0-3.el7.remi.x86_64
+php74-php-pecl-protobuf-3.19.1-1.el7.remi.x86_64
+php74-php-pecl-msgpack-2.1.2-1.el7.remi.x86_64
+php74-php-json-7.4.26-1.el7.remi.x86_64
+php74-php-cli-7.4.26-1.el7.remi.x86_64
+php74-php-pecl-grpc-1.42.0-1.el7.remi.x86_64
+php74-php-pecl-igbinary-3.2.6-1.el7.remi.x86_64
+php74-php-pecl-yac-2.3.0-1.el7.remi.x86_64
+php74-php-xml-7.4.26-1.el7.remi.x86_64
 ```
