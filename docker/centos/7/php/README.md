@@ -35,6 +35,12 @@ sudo docker push luomor/php-wechaty:v1
 sudo docker tag php-wechaty:v1 phpwechaty/php-wechaty:v1
 sudo docker push phpwechaty/php-wechaty:v1
 
+sudo docker tag wechaty/wechaty yiluxiangbei/wechaty
+sudo docker push yiluxiangbei/wechaty
+
+sudo docker tag wechaty/wechaty registry.cn-beijing.aliyuncs.com/luomor/wechaty
+sudo docker push registry.cn-beijing.aliyuncs.com/luomor/wechaty
+
 git reset --hard 2ac21caea9f3dcd32bd43d94142f867b281ee6ba
 git push origin HEAD --force
 
