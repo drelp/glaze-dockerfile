@@ -12,6 +12,14 @@ yum install php74-php-pecl-yac -y
 yum install php74-php-xml -y
 yum install php74-php -y
 ln -s /usr/bin/php74 /usr/bin/php
+
+docker commit -a "Peter Zhang" -m "centos php 7" bb412f93c31e centos-php:php74
+
+sudo docker tag centos-php:php74 yiluxiangbei/centos-php:php74
+sudo docker push yiluxiangbei/centos-php:php74
+
+sudo docker tag centos-php:php74 registry.cn-beijing.aliyuncs.com/luomor/centos-php:php74
+sudo docker push registry.cn-beijing.aliyuncs.com/luomor/centos-php:php74
 ```
 
 ```shell script
