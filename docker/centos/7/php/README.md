@@ -23,6 +23,12 @@ sudo docker push yiluxiangbei/centos-php:php74
 sudo docker tag centos-php:php74 registry.cn-beijing.aliyuncs.com/luomor/centos-php:php74
 sudo docker push registry.cn-beijing.aliyuncs.com/luomor/centos-php:php74
 
+sudo docker tag php-wechaty:v1 yiluxiangbei/php-wechaty:v1
+sudo docker push yiluxiangbei/php-wechaty:v1
+
+sudo docker tag php-wechaty:v1 registry.cn-beijing.aliyuncs.com/luomor/php-wechaty:v1
+sudo docker push registry.cn-beijing.aliyuncs.com/luomor/php-wechaty:v1
+
 git reset --hard 2ac21caea9f3dcd32bd43d94142f867b281ee6ba
 git push origin HEAD --force
 
