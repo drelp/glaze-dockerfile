@@ -25,6 +25,9 @@ sudo docker push registry.cn-beijing.aliyuncs.com/luomor/centos-php:php74
 
 git reset --hard 2ac21caea9f3dcd32bd43d94142f867b281ee6ba
 git push origin HEAD --force
+
+docker rmi $(docker images | grep "<none>" | awk "{print \$3}")
+docker rmi `docker images | grep none | awk '{print $3}'`
 ```
 
 ```shell script
