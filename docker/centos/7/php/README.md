@@ -138,4 +138,18 @@ docker run -ti \
   examples/ding-dong-bot.php
 
 # docker stop wechaty_puppet_service_token_gateway
+
+tree conf 
+conf
+├── ca.key
+├── ca.pem
+├── ca.srl
+├── client
+│   ├── client.csr
+│   ├── client.key
+│   └── client.pem
+└── server
+    ├── server.csr
+    ├── server.key
+    └── server.pem
 ```
