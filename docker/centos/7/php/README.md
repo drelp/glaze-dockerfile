@@ -77,3 +77,60 @@ php74-php-pecl-igbinary-3.2.6-1.el7.remi.x86_64
 php74-php-pecl-yac-2.3.0-1.el7.remi.x86_64
 php74-php-xml-7.4.26-1.el7.remi.x86_64
 ```
+
+```shell script
+# docker pull wechaty/wechaty
+
+export WECHATY_PUPPET="wechaty-puppet-wechat"
+export WECHATY_TOKEN=$(curl -s https://www.uuidgenerator.net/api/version4)
+echo "WECHATY_TOKEN=$WECHATY_TOKEN"
+export WECHATY_PUPPET_SERVER_PORT="8788"
+export WECHATY_LOG="verbose"
+export WECHATY_PUPPET_SERVICE_NO_TLS_INSECURE_SERVER="true"
+
+docker run -ti \
+  --rm \
+  --name wechaty_puppet_service_token_gateway \
+  --privileged \
+  --network=host \
+  -e WECHATY_LOG \
+  -e WECHATY_PUPPET \
+  -e WECHATY_PUPPET_SERVER_PORT \
+  -e WECHATY_PUPPET_SERVICE_NO_TLS_INSECURE_SERVER \
+  -e WECHATY_TOKEN \
+  wechaty/wechaty
+
+sleep 10s
+
+export WECHATY_PUPPET_SERVICE_TOKEN=$WECHATY_TOKEN
+# 0ab69268-ab08-4f0d-afc6-ca402ad52e3b
+export WECHATY_PUPPET_SERVICE_TOKEN=0ab69268-ab08-4f0d-afc6-ca402ad52e3b
+echo "WECHATY_PUPPET_SERVICE_TOKEN=$WECHATY_PUPPET_HOSTIE_TOKEN"
+export WECHATY_PUPPET_SERVICE_ENDPOINT="127.0.0.1:8788"
+
+docker pull phpwechaty/php-wechaty:v1
+
+docker run -ti \
+  --rm \
+  --name php-wechaty \
+  --network=host \
+  -e WECHATY_LOG \
+  -e WECHATY_PUPPET_SERVICE_TOKEN \
+  -e WECHATY_PUPPET_SERVICE_ENDPOINT \
+  --volume="$(pwd)":/bot \
+  phpwechaty/php-wechaty:v1 \
+  bash
+
+docker run -ti \
+  --rm \
+  --name php-wechaty \
+  --network=host \
+  -e WECHATY_LOG \
+  -e WECHATY_PUPPET_SERVICE_TOKEN \
+  -e WECHATY_PUPPET_SERVICE_ENDPOINT \
+  --volume="$(pwd)":/bot \
+  phpwechaty/php-wechaty:v1 \
+  examples/ding-dong-bot.php
+
+# docker stop wechaty_puppet_service_token_gateway
+```
