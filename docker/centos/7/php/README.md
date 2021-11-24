@@ -37,6 +37,11 @@ sudo docker push luomor/php-wechaty:v1
 sudo docker tag php-wechaty:v1 phpwechaty/php-wechaty:v1
 sudo docker push phpwechaty/php-wechaty:v1
 
+# 1. 删除本地tag
+git tag -d tag-name
+# 2. 删除远程tag
+git push origin :refs/tags/tag-name
+
 sudo docker tag wechaty/wechaty yiluxiangbei/wechaty
 sudo docker push yiluxiangbei/wechaty
 
