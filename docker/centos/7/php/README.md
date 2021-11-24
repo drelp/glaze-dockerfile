@@ -23,6 +23,8 @@ sudo docker push yiluxiangbei/centos-php:php74
 sudo docker tag centos-php:php74 registry.cn-beijing.aliyuncs.com/luomor/centos-php:php74
 sudo docker push registry.cn-beijing.aliyuncs.com/luomor/centos-php:php74
 
+docker build -t php-wechaty:v1 --no-cache .
+
 sudo docker tag php-wechaty:v1 yiluxiangbei/php-wechaty:v1
 sudo docker push yiluxiangbei/php-wechaty:v1
 
