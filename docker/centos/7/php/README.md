@@ -120,6 +120,7 @@ docker run -ti \
   -e WECHATY_LOG \
   -e WECHATY_PUPPET_SERVICE_TOKEN \
   -e WECHATY_PUPPET_SERVICE_ENDPOINT \
+  -e WECHATY_PUPPET_SERVICE_NO_TLS_INSECURE_CLIENT \
   --volume="$(pwd)":/bot \
   phpwechaty/php-wechaty:v1 \
   bash
@@ -131,6 +132,7 @@ docker run -ti \
   -e WECHATY_LOG \
   -e WECHATY_PUPPET_SERVICE_TOKEN \
   -e WECHATY_PUPPET_SERVICE_ENDPOINT \
+  -e WECHATY_PUPPET_SERVICE_NO_TLS_INSECURE_CLIENT \
   --volume="$(pwd)":/bot \
   phpwechaty/php-wechaty:v1 \
   examples/ding-dong-bot.php
