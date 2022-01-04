@@ -7,6 +7,8 @@ sudo docker-compose up
 sudo docker-compose up -d
 
 http://10.2.100.2:7474/browser/
+
+docker-compose logs -f --tail 100 neo4j
 ```
 
 ```shell script

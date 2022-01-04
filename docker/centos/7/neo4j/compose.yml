@@ -10,6 +10,7 @@ services:
       - ./data:/data
       - ./logs:/var/lib/neo4j/logs
     restart: always
+    # privileged: true
     ports:
       - 7474:7474
       - 7687:7687
