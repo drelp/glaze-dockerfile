@@ -19,7 +19,7 @@ sudo pip3 install py2neo
 sudo pip3 uninstall py2neo
 # py2neo (2021.2.3)
 pip3 install py2neo==
-sudo pip3 install py2neo=py2neo-4.3.0
+sudo pip3 install py2neo==4.3.0
 ```
 
 ```python
