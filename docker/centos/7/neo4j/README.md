@@ -12,8 +12,8 @@ neo4j
 
 docker-compose logs -f --tail 100 neo4j
 
-python build_medicalgraph.py
-python chat_graph.py
+python3 build_medicalgraph.py
+python3 chat_graph.py
 ```
 
 ```shell script
