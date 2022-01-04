@@ -1,0 +1,19 @@
+python3 build_medicalgraph.py
+Traceback (most recent call last):
+  File "build_medicalgraph.py", line 269, in <module>
+    handler = MedicalGraph()
+  File "build_medicalgraph.py", line 19, in __init__
+    password="123456")
+  File "/usr/local/lib/python3.6/site-packages/py2neo/database.py", line 288, in __init__
+    self.service = GraphService(profile, **settings)
+  File "/usr/local/lib/python3.6/site-packages/py2neo/database.py", line 115, in __init__
+    profile = ServiceProfile(profile, **settings)
+  File "/usr/local/lib/python3.6/site-packages/py2neo/__init__.py", line 475, in __init__
+    super(ServiceProfile, self).__init__(profile, **settings)
+  File "/usr/local/lib/python3.6/site-packages/py2neo/__init__.py", line 190, in __init__
+    self._apply_settings(**settings)
+  File "/usr/local/lib/python3.6/site-packages/py2neo/__init__.py", line 512, in _apply_settings
+    auth, user, password, **other)
+  File "/usr/local/lib/python3.6/site-packages/py2neo/__init__.py", line 293, in _apply_settings
+    raise ValueError("The following settings are not supported: %r" % other)
+ValueError: The following settings are not supported: {'http_port': 7474}
