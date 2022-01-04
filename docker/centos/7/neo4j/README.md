@@ -18,6 +18,10 @@ python3 chat_graph.py
 sudo pip3 install py2neo
 ```
 
+```python
+Graph("bolt://localhost:7687", auth=("neo4j", "password"))
+```
+
 ```shell script
 sudo docker network create --subnet=172.19.0.0/16 neo4j-network
 ```
