@@ -14,6 +14,8 @@ docker-compose logs -f --tail 100 neo4j
 
 python3 build_medicalgraph.py
 python3 chat_graph.py
+
+sudo pip3 install py2neo
 ```
 
 ```shell script
