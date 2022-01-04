@@ -17,3 +17,8 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.6/site-packages/py2neo/__init__.py", line 293, in _apply_settings
     raise ValueError("The following settings are not supported: %r" % other)
 ValueError: The following settings are not supported: {'http_port': 7474}
+
+pip3 install py2neo==
+Collecting py2neo==
+  Could not find a version that satisfies the requirement py2neo== (from versions: 4.0.0, 4.1.0, 4.1.1, 4.1.2, 4.1.3, 4.2.0, 4.3.0, 2020.0.0, 2020.1.0, 2020.1.1, 2021.0.0, 2021.0.1, 2021.1.0, 2021.1.1, 2021.1.2, 2021.1.3, 2021.1.4, 2021.1.5, 2021.2.0, 2021.2.1, 2021.2.2, 2021.2.3)
+No matching distribution found for py2neo==
