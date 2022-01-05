@@ -20,6 +20,9 @@ sudo pip3 uninstall py2neo
 # py2neo (2021.2.3)
 pip3 install py2neo==
 sudo pip3 install py2neo==4.3.0
+
+python3 chatbot_graph.py
+sudo pip3 install ahocorasick
 ```
 
 ```python

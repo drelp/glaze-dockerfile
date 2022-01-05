@@ -22,3 +22,13 @@ pip3 install py2neo==
 Collecting py2neo==
   Could not find a version that satisfies the requirement py2neo== (from versions: 4.0.0, 4.1.0, 4.1.1, 4.1.2, 4.1.3, 4.2.0, 4.3.0, 2020.0.0, 2020.1.0, 2020.1.1, 2021.0.0, 2021.0.1, 2021.1.0, 2021.1.1, 2021.1.2, 2021.1.3, 2021.1.4, 2021.1.5, 2021.2.0, 2021.2.1, 2021.2.2, 2021.2.3)
 No matching distribution found for py2neo==
+
+python3 chat_graph.py
+python3: can't open file 'chat_graph.py': [Errno 2] No such file or directory
+[bj@fe1 QASystemOnMedicalKG]$ python3 chatbot_graph.py
+Traceback (most recent call last):
+  File "chatbot_graph.py", line 7, in <module>
+    from question_classifier import *
+  File "/home/bj/git/QASystemOnMedicalKG/question_classifier.py", line 8, in <module>
+    import ahocorasick
+ModuleNotFoundError: No module named 'ahocorasick'
