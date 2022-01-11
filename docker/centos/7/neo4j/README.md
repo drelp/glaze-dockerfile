@@ -6,6 +6,9 @@ sudo docker-compose down
 sudo docker-compose up
 sudo docker-compose up -d
 
+sudo docker-compose up medical
+sudo docker-compose up -d medical
+
 http://10.2.100.2:7474/browser/
 neo4j
 123456
