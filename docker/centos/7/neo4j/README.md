@@ -7,7 +7,7 @@ sudo docker-compose up
 sudo docker-compose up -d
 
 sudo docker-compose -f docker-compose1.yml up medical
-sudo docker-compose -f docker-compose1.ymlstop medical
+sudo docker-compose -f docker-compose1.yml stop medical
 sudo docker-compose -f docker-compose1.ymlup -d medical
 
 apt-get install iputils-ping
