@@ -1,0 +1,9 @@
+version: '3'
+services:
+
+  medical:
+    image: yiluxiangbei/medical-kg:v1
+    container_name: medical
+    volumes:
+      - /etc/localtime:/etc/localtime
+    restart: always
