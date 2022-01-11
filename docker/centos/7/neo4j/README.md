@@ -8,7 +8,7 @@ sudo docker-compose up -d
 
 sudo docker-compose -f docker-compose1.yml up medical
 sudo docker-compose -f docker-compose1.yml stop medical
-sudo docker-compose -f docker-compose1.ymlup -d medical
+sudo docker-compose -f docker-compose1.yml up -d medical
 
 apt-get install iputils-ping
 ping neo4j
@@ -16,6 +16,8 @@ ping neo4j
 docker ps|grep medical
 docker exec -it 395a019c6380 bash
 python chatbot_graph.py
+
+docker exec -it medical python chatbot_graph.py
 
 python3 chatbot_graph.py
 
