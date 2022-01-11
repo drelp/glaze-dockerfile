@@ -6,9 +6,9 @@ sudo docker-compose down
 sudo docker-compose up
 sudo docker-compose up -d
 
-sudo docker-compose up medical -f docker-compose1.yml
-sudo docker-compose stop medical -f docker-compose1.yml
-sudo docker-compose up -d medical -f docker-compose1.yml
+sudo docker-compose -f docker-compose1.yml up medical
+sudo docker-compose -f docker-compose1.ymlstop medical
+sudo docker-compose -f docker-compose1.ymlup -d medical
 
 apt-get install iputils-ping
 ping neo4j
