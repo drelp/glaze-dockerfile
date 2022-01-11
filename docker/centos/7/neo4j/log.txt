@@ -57,3 +57,5 @@ Installing collected packages: pyahocorasick
 
     ----------------------------------------
 Command "/usr/bin/python3.6 -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-ic8kcxr4/pyahocorasick/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /tmp/pip-wfqjc412-record/install-record.txt --single-version-externally-managed --compile" failed with error code 1 in /tmp/pip-build-ic8kcxr4/pyahocorasick/
+
+docker EOFError: EOF when reading a line
