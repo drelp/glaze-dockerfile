@@ -1,7 +1,7 @@
 version: '3'
 services:
 
-  neo4j:
+  neo4jv3:
     image: neo4j:3.4.0 # 3.4.0
     volumes:
       - ./conf:/var/lib/neo4j/conf
@@ -12,8 +12,8 @@ services:
     restart: always
     # privileged: true
     ports:
-      - 7474:7474
-      - 7687:7687
+      - 7470:7474
+      - 7680:7687
     networks:
       - condor
     environment:
