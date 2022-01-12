@@ -2,13 +2,13 @@ version: '3'
 services:
 
   neo4jv3:
-    image: neo4j:3.4.0 # 3.4.0
+    image: neo4j:3.4.0 # 3.5.5
     volumes:
       - ./conf:/var/lib/neo4j/conf
       - ./mnt:/var/lib/neo4j/import
       - ./plugins:/plugins
       - ./data:/data
-      - ./logs:/var/lib/neo4j/logs
+      # - ./logs:/var/lib/neo4j/logs
     restart: always
     # privileged: true
     ports:
