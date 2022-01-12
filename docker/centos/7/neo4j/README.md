@@ -42,6 +42,11 @@ sudo pip3 install pyahocorasick -i https://pypi.tuna.tsinghua.edu.cn/simple/
 sudo yum install python3-devel
 ```
 
+```shell
+cd git/docker-neo4j/mnt
+cp -r ../../Spring-Boot-Neo4j-Movies/src/main/resources/statics/data（csv）/csv/* .
+```
+
 ```python
 Graph("bolt://localhost:7687", auth=("neo4j", "password"))
 ```
