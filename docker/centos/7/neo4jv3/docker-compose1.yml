@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  medical:
+    image: yiluxiangbei/medical-kg:v1
+    container_name: medical
+    volumes:
+      - /etc/localtime:/etc/localtime
+    networks:
+      - condor
+    restart: always
+    # restart: unless-stopped
+
+networks:
+  condor:
+    external: true
