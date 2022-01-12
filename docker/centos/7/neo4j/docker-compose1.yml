@@ -6,5 +6,11 @@ services:
     container_name: medical
     volumes:
       - /etc/localtime:/etc/localtime
+    networks:
+      - condor
     restart: always
     # restart: unless-stopped
+
+networks:
+  condor:
+    external: true
