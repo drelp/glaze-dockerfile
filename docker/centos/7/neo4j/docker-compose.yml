@@ -2,7 +2,7 @@ version: '3'
 services:
 
   neo4j:
-    image: neo4j:4.1.4
+    image: neo4j:4.1.4 # 3.4.0
     volumes:
       - ./conf:/var/lib/neo4j/conf
       - ./mnt:/var/lib/neo4j/import
