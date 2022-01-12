@@ -45,6 +45,8 @@ sudo yum install python3-devel
 ```shell
 cd git/docker-neo4j/mnt
 cp -r ../../Spring-Boot-Neo4j-Movies/src/main/resources/statics/data（csv）/csv/* .
+
+dbms.directories.import=import
 ```
 
 ```python
