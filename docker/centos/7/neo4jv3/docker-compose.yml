@@ -8,7 +8,7 @@ services:
       - ./mnt:/var/lib/neo4j/import
       - ./plugins:/plugins
       - ./data:/data
-      # - ./logs:/var/lib/neo4j/logs
+      - ./logs:/var/lib/neo4j/logs
     restart: always
     # privileged: true
     ports:
